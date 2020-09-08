@@ -1,5 +1,6 @@
-<html>
+<!DOCTYPE html>
   <head>
+    <title>Hello-2</title>
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin ></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin ></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
@@ -9,17 +10,17 @@
     <script type="text/babel">
       class Hello extends React.Component {
         render() {
-          return (<h1>Hello React</h1>)
+          return (<h1>Hello {this.props.name}!</h1>)
         }
       }
    
-      class PrintHello extends React.Component {
+      class HelloApp extends React.Component {
         render() {
-          return (<div><Hello /><Hello /></div>)
+          return (<div><Hello name="Tom" /><Hello name="Peter" /></div>)
         }
       }
       
-      ReactDOM.render(<PrintHello />, document.querySelector("#hello-app"));
+      ReactDOM.render(<HelloApp />, document.querySelector("#hello-app"));
     </script>
   </body>
 </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <title>Hello React</title>
+    <script 
+      src="https://unpkg.com/react@16/umd/react.development.js" 
+      crossorigin ></script>
+    <script 
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" 
+      crossorigin ></script>
+    <script 
+      src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
+</head>
+
+<body>
+    <div id="hello-app" />
+    <script type="text/babel">
+
+     const App = (props) => { 
+         const [newName,setNewName] = React.useState('Peter')
+
+         function updateName(event) {
+            if (event.key == "Enter"){
+                setNewName (event.target.value);
+	        }
+         }
+         return (
+            <div>
+                <Message name={newName} />
+                <input type="text" onKeyPress={updateName} />
+            </div>
+         );
+     }
+     
+     const Message = (props) => (
+        <h1>Welcome {props.name}!!!</h1>
+     );
+
+     ReactDOM.render(<App/>, 
+                    document.getElementById('hello-app'));
+    </script>
+</body>
+
+</html>

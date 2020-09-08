@@ -1,30 +1,31 @@
-<html>
+<!DOCTYPE html>
   <head>
+    <title>Hello-5</title>
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin ></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin ></script>
-     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-     <style>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
        img {
-	 max-width: 100%;
-  	 height: auto;
+	      max-width: 100%;
+  	    height: auto;
        }
        div {
-         margin-top: 50px;
-  	 resize: both;
-  	 overflow: auto;
+        margin-top: 50px;
+  	    resize: both;
+  	    overflow: auto;
        }
        input[type="text"]{
-         font-size:58pt;
-         text-align:center;
+        font-size:58pt;
+        text-align:center;
        }
        h2 {
-         font-family:verdana;
-         color:blue;
+        font-family:verdana;
+        color:blue;
        }
      </style>
   </head>
   <body onLoad="document.getElementById('response').focus();">
-    <div id="math-app" align="center" />
+    <div id="math-app" />
     </div>
     <script type="text/babel">
      
@@ -36,28 +37,28 @@
           } else if (numb == 2) {
             return <img src="https://www.clipartbay.com/cliparts/funny-number-2-clipart-wqyyojb.gif" width="200" height="200" />
           } else if (numb == 3) {
-	    return <img src="https://i.pinimg.com/originals/81/bd/4d/81bd4dfc2d74773c725a81fa6740d781.png" width="200" height="200" />
+	          return <img src="https://i.pinimg.com/originals/81/bd/4d/81bd4dfc2d74773c725a81fa6740d781.png" width="200" height="200" />
           } else if (numb == 4) {
-	    return <img src="https://www.clipartbay.com/cliparts/funny-number-4-clipart-lo5yfdd.gif"  width="200" height="200" />
+	          return <img src="https://www.clipartbay.com/cliparts/funny-number-4-clipart-lo5yfdd.gif"  width="200" height="200" />
           } else if (numb == 5) {
-	    return <img src="https://cdn3.vectorstock.com/i/thumb-large/57/07/cheeky-waving-cartoon-number-5-vector-1895707.jpg"  width="200" height="200" />
+	          return <img src="https://cdn3.vectorstock.com/i/thumb-large/57/07/cheeky-waving-cartoon-number-5-vector-1895707.jpg"  width="200" height="200" />
           } else if (numb == 6) {
-	    return <img src="https://www.clipartbay.com/cliparts/funny-clipart-numbers-6-uthyssd.gif"  width="200" height="200" />
+	        return <img src="https://www.clipartbay.com/cliparts/funny-clipart-numbers-6-uthyssd.gif"  width="200" height="200" />
           } else if (numb == 7) {
-	    return <img src="https://michellearmes.files.wordpress.com/2012/10/7-giraffe.jpg?w=612"  width="200" height="200" />
+	        return <img src="https://michellearmes.files.wordpress.com/2012/10/7-giraffe.jpg?w=612"  width="200" height="200" />
           } else if (numb == 8) {
-	    return <img src="https://inst-1.cdn.shockers.de/hs_cdn/out/pictures/master/product/1/animaloon-zahl-8-katze--riesenzahl-folienballon--35699.jpg" width="200" height="200" />
+	        return <img src="https://inst-1.cdn.shockers.de/hs_cdn/out/pictures/master/product/1/animaloon-zahl-8-katze--riesenzahl-folienballon--35699.jpg" width="200" height="200" />
           } else if (numb == 9) {
-	    return <img src="https://i.etsystatic.com/6581275/r/il/11d6d6/1137822258/il_570xN.1137822258_ojkw.jpg"  width="200" height="200" />
+	        return <img src="https://i.etsystatic.com/6581275/r/il/11d6d6/1137822258/il_570xN.1137822258_ojkw.jpg"  width="200" height="200" />
           } else if (numb == 10) {
-	    return <img src="https://cdn2.vectorstock.com/i/thumb-large/00/91/number-ten-vector-1250091.jpg" width="200" height="200" />
+	        return <img src="https://cdn2.vectorstock.com/i/thumb-large/00/91/number-ten-vector-1250091.jpg" width="200" height="200" />
           }
         }
       }
     
       class Addition  extends React.Component {
         
-	constructor(props) {
+        constructor(props) {
           super(props);
           this.state= { num1: 1, num2: 1, score: 0, response: "" }
         }
@@ -77,7 +78,7 @@
         renderProblem() {
           return (
             <div>
-	      <h1><Number num={this.state.num1}/> <img src="https://www.theschoolrun.com/sites/theschoolrun.com/files/article_images/addition.jpg"  width="200" height="200" /> <Number num={this.state.num2}/></h1>
+	            <h1><Number num={this.state.num1}/> <img src="https://www.theschoolrun.com/sites/theschoolrun.com/files/article_images/addition.jpg"  width="200" height="200" /> <Number num={this.state.num2}/></h1>
               <br/><br/><input id="response" autofocus type="text" onKeyPress={this.checkAnswer}  onChange={this.updateResponse} value={this.state.response}></input>
               <h2 id="score">SCORE : {this.state.score}</h2> 
             </div>
@@ -96,12 +97,12 @@
               }));
               document.getElementById("score").style.color="green";
             } else {
- 	      this.setState(state => ({
+ 	            this.setState(state => ({
                 response: ""
               }));
               document.getElementById("score").style.color="red";
             }
-	  }
+	        }
         }
 
         updateResponse = (event) => {
@@ -109,9 +110,8 @@
            response: event.target.value
          });
         }
-
       }
-   
+  
       class MathApp extends React.Component {
         render() {
           return (<div><Addition /></div>)

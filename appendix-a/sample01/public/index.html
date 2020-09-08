@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>Hello React</title>
+    <script 
+      src="https://unpkg.com/react@16/umd/react.development.js" 
+      crossorigin ></script>
+    <script 
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" 
+      crossorigin ></script>
+    <script 
+      src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
+</head>
+
+<body>
+    <div id="hello-app" />
+    <script type="text/babel">
+     const App = () => (
+        <h1>Hellow John!!!</h1>
+     );
+     ReactDOM.render(<App />, 
+                    document.getElementById("hello-app"));
+    </script>
+</body>
+
+</html>
