@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <title>Book Club</title>
+    <script 
+      src="https://unpkg.com/react@16/umd/react.development.js" 
+      crossorigin ></script>
+    <script 
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" 
+      crossorigin ></script>
+    <script 
+      src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
+</head>
+
+<body>
+    <div id="book-club-app" />
+    <script type="text/babel">
+
+     const App = (props) => { 
+         const [newName,setNewName] = React.useState('Peter')
+
+         function updateName(event) {
+            if (event.key == "Enter"){
+                setNewName (event.target.value);
+	        }
+         }
+         return (
+            <div>
+                <h1>Welcome to the Book Club, {props.name}!</h1>
+                <Books />
+                <input type="text" onKeyPress={updateName} />
+            </div>
+         );
+     }
+
+     const BookList = [
+      {"id" : "001", "name" : "React in Action", "author":"Mark Tielens Thomas"},
+      {"id" : "002","name" : "React Hooks in Action", "author":"John Larsen"},
+      {"id" : "003","name" : "React Native in Action", "author":"Nader Dabit"}
+     ];
+
+     const Books = () => (
+        <div>
+            <table>
+                <tbody>
+                {
+                BookList.map((book) => (
+                <tr key={book.id}>
+                    <td>{book.name}</td>
+                    <td>{book.author}</td>
+                    <td><a href="">REMOVE</a></td>
+                </tr>
+                ))
+                }
+                </tbody>
+            </table>
+        </div>
+     );
+
+     ReactDOM.render(<App name="Peter"/>, 
+                    document.getElementById('book-club-app'));
+    </script>
+</body>
+
+</html>

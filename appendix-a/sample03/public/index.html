@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Hello React</title>
+    <title>Book Club</title>
     <script 
       src="https://unpkg.com/react@16/umd/react.development.js" 
       crossorigin ></script>
@@ -13,17 +13,40 @@
 </head>
 
 <body>
-    <div id="hello-app" />
+    <div id="book-club-app" />
     <script type="text/babel">
+
      const App = (props) => (
-        <Message name={props.name} />
+        <div>
+            <h1>Welcome to the Book Club, {props.name}!</h1>
+            <Books />
+        </div>
      );
-     const Message = (props) => (
-        <h1>Welcome {props.name}!!!</h1>
+
+     const Books = () => (
+        <div>
+            <table>
+                <tr>
+                    <td>React in Action</td>
+                    <td>Mark Tielens Thomas</td>
+                    <td><a href="">REMOVE</a></td>
+                </tr>
+                <tr>
+                    <td>React Hooks in Action</td>
+                    <td>John Larsen</td>
+                    <td><a href="">REMOVE</a></td>
+                </tr>
+                <tr>
+                    <td>React Native in Action</td>
+                    <td>Nader Dabit</td>
+                    <td><a href="">REMOVE</a></td>
+                </tr>
+            </table>
+        </div>
      );
 
      ReactDOM.render(<App name="Peter"/>, 
-                    document.getElementById("hello-app"));
+                    document.getElementById("book-club-app"));
     </script>
 </body>
 
