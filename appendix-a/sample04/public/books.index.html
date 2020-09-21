@@ -13,19 +13,21 @@
 </head>
 
 <body>
-    <div id="number-sum-app" />
+    <div id="book-club-app" />
     <script type="text/babel">
+
      const App = () => { 
-         const [sum,setSum] = React.useState(0);
+         const [newName,setNewName] = React.useState('Peter')
          return (
             <div>
-                <h1>Sum of Numbers: {sum}</h1>
-                <input type="text" onKeyPress={event=>event.key=="Enter" ? setSum(parseInt(sum)+parseInt(event.target.value)) : undefined} />
+                <h1>Welcome to the Book Club, {newName}!</h1>
+                <input type="text" onKeyPress={event=>event.key=="Enter" ? setNewName(event.target.value) : undefined} />
             </div>
          );
      }
 
-     ReactDOM.render(<App sum='0' />,document.getElementById('number-sum-app'));
+     ReactDOM.render(<App />, 
+                    document.getElementById('book-club-app'));
     </script>
 </body>
 

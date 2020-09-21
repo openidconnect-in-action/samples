@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<body>
+ <script type="module">
+  let x = 10;
+   
+  function getSqrt(num) {
+    return num*num;
+  }
+ </script>
+
+ <script type="module">
+  console.log(getSqrt(x)); // Uncaught ReferenceError: getSqrt is not defined
+ </script>
+
+</body>
