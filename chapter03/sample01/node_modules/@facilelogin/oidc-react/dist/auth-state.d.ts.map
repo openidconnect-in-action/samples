@@ -1,0 +1,1 @@
+{"version":3,"file":"auth-state.d.ts","sourceRoot":"","sources":["../src/auth-state.tsx"],"names":[],"mappings":"AAAA,oBAAY,IAAI,GAAG,GAAG,CAAC;AAEvB;;GAEG;AACH,MAAM,WAAW,SAAS;IACxB,KAAK,CAAC,EAAE,KAAK,CAAC;IACd,eAAe,EAAE,OAAO,CAAC;IACzB,SAAS,EAAE,OAAO,CAAC;IACnB,IAAI,CAAC,EAAE,IAAI,CAAC;CACb;AAED;;GAEG;AACH,eAAO,MAAM,gBAAgB,EAAE,SAI9B,CAAC"}
